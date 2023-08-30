@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <title>Danganropa</title>
+
+    <style>
+        
+        .inicio {
+            width: 80%;
+            margin-left: 10%;
+            margin-right: 10%;
+            text-align: justify;
+            background-color: blueviolet;
+           
+        }
+
+        .inicio > h1 {
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+
+        }
+
+
+        #emoji {
+            width: 200px;
+            height: 200px;
+            
+        }
+
+        .e1 {
+            background-image: url("IMG/e1.png");
+        }
+
+        .e2 {
+            background-image: url("IMG/e2.png");
+        }
+
+        .e3 {
+            background-image: url("IMG/e3.png");
+        }
+    </style>
+    <script>
+        function trocaEmoji(e) {
+            var obj = document.getElementById("emoji");
+            if(e == 1) {
+                obj.setAttribute("class","e1")
+            } else if(e == 2) {
+                obj.setAttribute("class","e2")
+            } else if(e == 3) {
+                obj.setAttribute("class","e3")
+            }
+        }
+        function removerEmoji() {
+            var obj = document.getElementById("emoji");
+            obj.removeAttribute("class");
+        }
+        function verificar() {
+            var obj = document.getElementById("emoji");
+            if (obj.hasAttribute("class")) {
+                alert("Atributo class está na tag");
+            } else {
+                alert("sem atributo class");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="inicio">
+        <i>
+            <h1>Danganropa</h1><br>
+        </i>
+        <p>Danganronpa (japonês:ダンガンロンパ) é uma franquia de videogame japonesa criado por Kazutaka Kodaka e desenvolvido
+            e sendo da propriedade de Spike Chunsoft (anteriormente conhecida como Spike). A série envolve um grupo de
+            estudantes do ensino médio que são forçados a se matar por um urso chamado Monokuma. A jogabilidade
+            apresenta uma mistura de aventura, romance visual e elementos de simulação de namoro. O primeiro jogo,
+            Danganronpa: Trigger Happy Havoc, foi lançado para o PlayStation Portable em 2010.</p>
+<center>
+            <img class="imagem" src="./IMG/danganronpa.jpg" alt="Imagem do anime danganronpa"><br>
+    
+
+        <button class="button" onclick="trocaEmoji(1)">Emoji 1</button>
+        <button class="button" onclick="trocaEmoji(2)">Emoji 2</button>
+        <button class="button" onclick="trocaEmoji(3)">Emoji 3</button>
+        <button class="button" onclick="removerEmoji()">Remover Emoji</button>
+        <button class="button" onclick="verificar()">Verificar</button>
+        <div id="emoji"></div>
+</center>
+    </div>
+</body>
+
+</html>
